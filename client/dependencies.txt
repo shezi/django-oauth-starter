@@ -1,0 +1,4 @@
+oauthlib==0.3.4
+requests==1.1.0
+-e git+https://github.com/requests/requests-oauthlib.git#egg=requests_oauthlib
+
