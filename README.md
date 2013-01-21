@@ -1,6 +1,5 @@
 django-oauth-starter
 ====================
-
 Everything you need to get going with OAuth 1.0a on Django
 
 
@@ -24,16 +23,31 @@ What this package contains
   * has one view that does OAuth authentication itself for demonstration purposes
   * enables Django admin on all interesting OAuth models
   * test data with one OAuth Consumer (== API key) and two users
+  
+  
+Quickstart
+==========
+
+In one shell window, prepare the server:
+
+    ./prepare-server.sh
+    ./restart-server.sh
+
+After the server is running, open another shell window and start the client:
+
+    ./prepare-client.sh
+    ./start-client.sh
+
+Once you have seen a run of the OAuth workflow, look into `server/views.py` to see the workflow from a server side. Look into `client/client.py` to see the client-side implementation.
 
 
 The server
 ==========
-
 The Django server is located in the subdirectory `server`. It's a full Django project containing only one app, `oauth_app`. This app contains urls, models, views and libraries to make OAuth 1.0a work.
 
 Before you can run the server, you have to install the prerequisites, as listed in `server/dependencies.txt`. We suggest putting them into a virtualenv. You can run the script `prepare-server.sh` to create the virtualenv and have the dependencies installed.
 
-Once all prerequisites are installed, you can run the server by syncing the database and start the runserver, or you use the supplied `restart-server.sh` script.
+Once all prerequisites are installed, you can run the server by syncing the database and start the runserver, or you use the supplied `restart-server.sh` script. This script also loads the supplied test data (from `server/test_consumer.json`) which contains one consumer with key `key` and secret `secret`, as well as two users, `root` (which is a superuser) and `user` (which is not). This is all the data you need to complete an OAuth 1.0a workflow.
 
 The server offers several URLs pertaining to the OAuth workflow, as well as views for authorizing and deauthorizing clients and test resources. You can find all URLs in the module `oauth_app/urls.py`
 
@@ -41,3 +55,12 @@ All views are collected in `oauth_app/views.py`. It is a good starting point for
 
 All necessary models are collected in `oauth_app/models.py`. If you use these models as a starting point for your own implementation, you can add more fields to these models.
 
+
+The client
+==========
+
+The client is a simple python script, `client.py` that completes the OAuth 1.0a workflow and accesses two resource functions. It is set up to access the URLs of the supplied test server.
+
+Before you can run the client, you have to install the prerequites, as listed in `client/dependencies.txt`. We suggest putting them into a virtualenv. You can run the script `prepare-client.sh` to create the virtualenv and have the dependencies installed.
+
+Once all prerequisites are installed, you can run the client by starting the script, or by using the supplied `start-client.sh` shell script. 
