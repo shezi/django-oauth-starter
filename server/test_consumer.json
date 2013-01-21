@@ -1,0 +1,48 @@
+[
+  {
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "root", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2013-01-21T10:52:33.924Z", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "pbkdf2_sha256$10000$N9r5Kw8ACfmE$JsLEZb0rcIaXfsnpWlmJuOYdqGrobcXOQpdq79ZisTI=", 
+      "email": "root@example.com", 
+      "date_joined": "2013-01-21T10:52:19.224Z"
+    }
+  },
+  {
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "user", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2013-01-21T10:55:17.771Z", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "pbkdf2_sha256$10000$4TN77CQZSlvP$U9Cx/9Ok/gvJackG2CgkfoFL2zaIOF03Mi0UMfZUesQ=", 
+      "email": "", 
+      "date_joined": "2013-01-21T10:55:17.771Z"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "oauth_app.oauthconsumer", 
+    "fields": {
+      "secret": "secret", 
+      "user": 1, 
+      "key": "key",
+      "callback": "oob"
+    }
+  }
+]

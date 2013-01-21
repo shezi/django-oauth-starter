@@ -1,0 +1,26 @@
+{% load url from future %}
+<html>
+<head></head>
+<body>
+
+  <h1>Revoke client authorization</h1>
+
+  <p>
+    You have request to revoke the authorization for client <code>{{ token_key }}</code>.
+  </p>
+  
+  <p>
+    If you want to do this, please click the button below.
+  </p>
+  <p>
+    Revoking the authorization means that this client will not be allowed to access any of your data any more. You can start a new authorization for the same client again, if you want.
+  </p>
+
+  <form action="." method="POST">
+    {% csrf_token %}
+    <input type="submit" name="submit" value="Revoke authorization" />
+  </form>
+      
+  <a href="{% url 'oauth-client-list' %}">Back to client list</a>
+
+</body>

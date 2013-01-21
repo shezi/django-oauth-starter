@@ -1,0 +1,20 @@
+{% load url from future %}
+<html>
+<head></head>
+<body>
+
+  <h1>Authentication granted</h1>
+
+  <p>
+    Please enter the following verification PIN into your client: {{ verifier }}
+  </p>
+  
+  {% ifequal callback 'oob'  %}
+  Done, you can close this window now (NO CALLBACK DEFINED).
+  {% else %}
+  <a href="{{ callback }}">Done, you can return to your service now.</a>
+  {% endifequal %}
+
+  <a href="{% url 'oauth-client-list' %}">List clients and deauthorize them</a>
+
+</body>

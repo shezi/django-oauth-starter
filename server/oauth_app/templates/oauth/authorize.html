@@ -1,0 +1,32 @@
+<html>
+<head></head>
+<body>
+
+  <h1>Authentication request</h1>
+
+  <p>
+    A client requested authorization for access.
+  </p>
+
+  <p>
+    This is a detailed description of the client, the rights and what it means to authorize it.
+  </p>
+
+  <p>If you wish to authorize that client to access your files, please click the 'Grant' button. You can review your authorized clients at any time from your clients page. You can also de-authorize any client at any time from your clients page.
+  </p>
+
+  <form action="." method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="confirm" value="true" />
+    <input type="hidden" name="oauth_token" value="{{ oauth_token }}">
+    <input type="submit" name="submit" value="Grant access"/>
+  </form>
+  <form action="." method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="confirm" value="false" />
+    <input type="hidden" name="oauth_token" value="{{ oauth_token }}">
+    <input type="submit" name="submit" value="Decline access"/>
+  </form>
+
+
+</body>

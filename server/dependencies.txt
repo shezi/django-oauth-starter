@@ -1,0 +1,4 @@
+Django>=1.4.0
+djangorestframework>=2.1.16
+pytz>=2012j
+

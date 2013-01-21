@@ -1,0 +1,48 @@
+<html>
+<head></head>
+<body>
+
+  <h1>Client list</h1>
+
+  <h2>
+    The following is a list of the clients you have allowed access:
+  </h2>
+  
+  <table border="1">
+    <tr>
+      <th>Client key</th>
+      <th>Client secret (NEVER SHOW THIS!)</th>
+      <th>Date of authorization</th>
+      <th></th>
+    </tr>
+    {% for token in access_tokens %}
+    <tr>
+      <td>{{ token.key }}</td>
+      <td>{{ token.secret }}</td>
+      <td>{{ token.created }}</td>
+      <td>{% if token.status == 'authorized' %}<a href="{% url oauth-deauthorize-access token.key %}">Revoke authorization</a>{% else %}not authorized: {{ token.status }}{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+      
+  <h2>
+    The following is a list of the request tokens for your user:
+  </h2>
+  
+  <table>
+    <tr>
+      <th>Token key</th>
+      <th>Date of request</th>
+      <th>status</th>
+    </tr>
+    {% for token in request_tokens %}
+    <tr>
+      <td>{{ token.key }}</td>
+      <td>{{ token.created }}</td>
+      <td>{{ token.status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+</body>
