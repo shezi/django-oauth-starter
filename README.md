@@ -23,7 +23,7 @@ What this package contains
   * has one view that does OAuth authentication itself for demonstration purposes
   * enables Django admin on all interesting OAuth models
   * test data with one OAuth Consumer (== API key) and two users
-  
+* A client-side implementation of the OAuth workflow using Requests (http://docs.python-requests.org/)
   
 Quickstart
 ==========
