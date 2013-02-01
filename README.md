@@ -2,6 +2,7 @@ django-oauth-starter
 ====================
 Everything you need to get going with OAuth 1.0a on Django
 
+Note: THIS PACKAGE IS IN ALPHA STATE AND REPRESENTS WHAT I KNOW ABOUT OAUTH. DO NOT USE IT IN PRODUCTION, USE IT TO LEARN FROM MY MISTAKES!
 
 What this package is
 --------------------
@@ -24,6 +25,15 @@ What this package contains
   * enables Django admin on all interesting OAuth models
   * test data with one OAuth Consumer (== API key) and two users
 * A client-side implementation of the OAuth workflow using Requests (http://docs.python-requests.org/)
+
+Open issue
+----------
+
+There are several open issues, first of all that the OAuth implementation in here is WRONG. It doesn't read request
+parameters correctly. There are also several code style issues and organizational problems.
+
+As stated above, this is a learning tool, not a full implementation you can use right away. Please treat it as such!
+
   
 Quickstart
 ==========
